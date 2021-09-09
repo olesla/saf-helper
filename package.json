@@ -1,0 +1,59 @@
+{
+  "name": "canonical-grabber",
+  "displayName": "CanonicalGrabber",
+  "description": "Grab canonical and show them above uuids",
+  "version": "0.0.1",
+  "publisher": "olesla",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-extension-samples"
+  },
+  "engines": {
+    "vscode": "^1.26.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:json"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "title": "Enable CanonicalGrabber",
+        "command": "canonical-grabber.enableCodeLens",
+        "category": "CanonicalGrabber"
+      },
+      {
+        "title": "Disable CanonicalGrabber",
+        "command": "canonical-grabber.disableCodeLens",
+        "category": "CanonicalGrabber"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "canonical-grabber.enableCodeLens": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.0",
+    "@types/vscode": "^1.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.0",
+    "@typescript-eslint/parser": "^4.16.0",
+    "eslint": "^7.21.0",
+    "typescript": "^4.3.5"
+  }
+}
